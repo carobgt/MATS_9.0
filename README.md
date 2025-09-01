@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ### Core Experiments
 
 1. **Directional Update Circuit Analysis** (`exp1_activation_patching.ipynb`)
-   - Comprehensive suite of causal experiments
+   - Causal experiments to try and locate the direction update circuit
    - Component path patching, block output patching
    - Attention pattern visualization and redundancy analysis
 
