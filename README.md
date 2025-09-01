@@ -1,6 +1,6 @@
 # MATS Application Code
 
-Clean, minimalistic code to reproduce the mechanistic interpretability experiments for the foraging model.
+Code for my final experiments.
 
 ## Setup
 
