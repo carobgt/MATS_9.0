@@ -2,8 +2,6 @@
 
 This repository contains the code for a mechanistic interpretability investigation into how a GPT-2 model, trained from scratch on random walks over 4x4 grids, develops internal representations of space.
 
-Using a suite of causal experiments, we trace the emergence of a "cognitive map" through the model's layers, identifying the specific circuits responsible for directional updates, coordinate representation, and functional reasoning.
-
 ## Setup
 
 1. Install dependencies:
