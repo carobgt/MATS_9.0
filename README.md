@@ -1,6 +1,6 @@
-# Neel Nanda MATS 9.0 Application Code
+# MATS 9.0 Application Code
 
-This repository contains the code for a mechanistic interpretability investigation into how a GPT-2 model, trained from scratch on random walks over 4x4 grids, develops internal representations of space.
+This repo contains the code for a mechanistic interpretability investigation into how a GPT-2 model, trained from scratch on random walks over 4x4 grids, develops internal representations of space.
 
 ## Setup
 
