@@ -19,12 +19,36 @@ def generate_random_names(count):
         names.add(''.join(random.choices(string.ascii_lowercase, k=2)))
     return list(names)
 
+# def get_grid_graph(nodes, size=4):
+#     """Create a grid graph with given node names."""
+#     if len(nodes) != size * size:
+#         raise ValueError(f"Expected {size*size} nodes, got {len(nodes)}")
+#     random.shuffle(nodes)
+#     G = nx.DiGraph()
+#     for r in range(size):
+#         for c in range(size):
+#             idx = r * size + c
+#             u = nodes[idx]
+#             if c < size - 1: G.add_edge(u, nodes[idx + 1], direction='EAST')
+#             if c > 0: G.add_edge(u, nodes[idx - 1], direction='WEST')
+#             if r < size - 1: G.add_edge(u, nodes[idx + size], direction='SOUTH')
+#             if r > 0: G.add_edge(u, nodes[idx - size], direction='NORTH')
+#     return G
+
+# fixed coordinate assignment for tracking nodes correctly
 def get_grid_graph(nodes, size=4):
-    """Create a grid graph with given node names."""
+    """Create a grid graph with given node names. [CORRECTED VERSION]"""
     if len(nodes) != size * size:
         raise ValueError(f"Expected {size*size} nodes, got {len(nodes)}")
+    
     random.shuffle(nodes)
     G = nx.DiGraph()
+
+    for r in range(size):
+        for c in range(size):
+            idx = r * size + c
+            G.add_node(nodes[idx])
+    
     for r in range(size):
         for c in range(size):
             idx = r * size + c
@@ -33,6 +57,7 @@ def get_grid_graph(nodes, size=4):
             if c > 0: G.add_edge(u, nodes[idx - 1], direction='WEST')
             if r < size - 1: G.add_edge(u, nodes[idx + size], direction='SOUTH')
             if r > 0: G.add_edge(u, nodes[idx - size], direction='NORTH')
+            
     return G
 
 def generate_random_walk(G, start_node, length):
